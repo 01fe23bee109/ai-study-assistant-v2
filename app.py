@@ -11,5 +11,5 @@ st.title("AI Study Assistant")
 q = st.text_input("Ask a question:")
 
 if q:
-    response = model.generate_content(f"Explain clearly: {q}")
-    st.write(response.text)
+    response = model.generate_content(q)
+    st.write(response.candidates[0].content.parts[0].text)
